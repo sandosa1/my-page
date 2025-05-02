@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Portfolio | Front-End Basics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(circle, #f8c4d6 0%, #d5d6f6 100%),
+        url("WhatsApp Image PM.jpeg") no-repeat top right;
+      background-size: cover, 200px auto;
+      background-blend-mode: lighten;
+      animation: softFlow 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes softFlow {
+      0% { filter: brightness(1); }
+      100% { filter: brightness(1.05); }
+    }
+
+    @keyframes moveText {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 40px;
+      color: #d16ba5;
+      margin-bottom: 15px;
+      animation: moveText 2s ease forwards;
+    }
+
+    p {
+      max-width: 100%;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      animation: moveText 3s ease forwards; /* تم زيادة مدة الانيميشن إلى 3 ثواني */
+      animation-delay: 1s;
+      opacity: 0;
+    }
+
+    .btn {
+      padding: 10px 25px;
+      background-color: #ffb3c6;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff99b3;
+      transform: scale(1.05);
+    }
+
+    .quote {
+      max-width: 1000px;
+      font-size: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 0 12px rgba(248, 187, 208, 0.5);
+      line-height: 2;
+      margin-top: 25px;
+      color: #444;
+      display: none;
+      animation: moveText 1s ease forwards;
+    }
+
+    .ayah {
+      font-weight: bold;
+      color: #aa4c8f;
+      margin-top: 15px;
+    }
+
+    #videoBtn {
+      background: linear-gradient(135deg, #ff8fb1, #a459d1);
+      border: none;
+      border-radius: 25px;
+      color: #fff;
+      padding: 10px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all 0.6s ease-in-out;
+      margin: 20px auto;
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    #videoBtn:hover {
+      background: linear-gradient(135deg, #f15e9e, #843bb7);
+      transform: scale(1.05);
+    }
+
+    .decor {
+      font-size: 30px;
+      color: #caa0d4;
+      margin-bottom: 10px;
+    }
+
+    .star1, .star2, .star3, .star5, .star6 {
+      position: absolute;
+      font-size: 24px;
+      color: #f3a6c9;
+    }
+
+    .star1 { top: 30px; left: 30px; }
+    .star2 { bottom: 40px; right: 50px; }
+    .star3 { top: 50%; left: 40px; transform: translateY(-50%); }
+    .star5 { bottom: 120px; left: 100px; }
+    .star6 { top: 150px; right: 20%; }
+
+    .quote-welcome {
+      font-family: 'Pacifico', cursive;
+      font-size: 22px;
+      color: #d16ba5;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      width: 100%;
+      animation: moveText 3s ease forwards; /* تم زيادة مدة الانيميشن إلى 3 ثواني */
+    }
+  </style>
+</head>
+<body>
+  <div class="decor">★</div>
+  <div class="star1">★</div>
+  <div class="star2">★</div>
+  <div class="star5">★</div>
+  <div class="star6">★</div>
+
+  <h1>" ! . Welcome to my elegant world..where code turns into magic"</h1>
+  <button class="btn" onclick="showQuoteAndPlay()">Discover More</button>
+
+  <div class="quote" id="quoteBox">
+    <p class="quote-welcome">
+      مرحباً بك في عالم مفعم بالجمال والألوان والإبداع — حيث تتلألأ أسطر الكود كأنها غبار سحري
+    </p>
+    <strong>رسالة لقلبك — الصلاة</strong><br><br>
+    صِلة بين العبد وربه… الصلاة مش بس فريضة، دي راحة وسلام وطمأنينة.<br>
+    جرب تصلي بقلبك، وشوف الفرق!<br><br>
+    الصلاة ليست مجرد أداء واجب، بل هي لقاء روحاني يُجدد فيه القلب عهده مع الله.<br>
+    فيها تسكن النفس، وتُغسل الهموم، وتُضاء الدروب بنور اليقين.<br>
+    فاجعل صلاتك حياة لقلبك.
+    <div class="ayah">
+      يقول الله جل جلاله:<br>
+      {فَخَلَفَ مِن بَعْدِهِمْ خَلْفٌ أَضَاعُوا الصَّلَاةَ وَاتَّبَعُوا الشَّهَوَاتِ ۖ فَسَوْفَ يَلْقَوْنَ غَيًّا}<br><br>
+      ويقول عز وجل:<br>
+      {وَالَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ يُحَافِظُونَ (34) أُولَٰئِكَ فِي جَنَّاتٍ مُّكْرَمُونَ (35)}<br><br>
+      فتأتي الوصايا القرآنية لتريك كيف تستقم فـاختر لنفسك ما شِئْـت...<br>
+      واعمَـل لجنةٍ يطيبُ فيها المقر<br>
+      ولا تغرّنكَ الدُنيـا فتزولَ وتندثـر…<br><br>
+      "صّلِ عَلۓِ حَبِيبُ اللَّه اللهم صّلِ وسَلّمْ عَلۓِ نَبِيْنَا مُحَمد"
+    </div>
+  </div>
+
+  <audio id="bgAudio" src="audio.mp3.mpeg"></audio>
+
+  <button id="videoBtn" onclick="showVideo()">Discover more</button>
+
+  <div id="videoContainer" style="display: none; opacity: 0; transform: translateY(20px); transition: all 0.6s ease;">
+    <video controls 
+      style="width: 100%; max-width: 500px; margin: 30px auto; display: block; border-radius: 12px;">
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    function showQuoteAndPlay() {
+      const box = document.getElementById('quoteBox');
+      const audio = document.getElementById('bgAudio');
+      const videoBtn = document.getElementById('videoBtn');
+      box.style.display = 'block';
+      audio.play();
+      videoBtn.style.display = 'block';
+      setTimeout(() => {
+        videoBtn.style.opacity = '1';
+        videoBtn.style.transform = 'translateY(0)';
+      }, 50);
+    }
+
+    function showVideo() {
+      const videoContainer = document.getElementById("videoContainer");
+      const videoBtn = document.getElementById("videoBtn");
+      videoContainer.style.display = 'block';
+      setTimeout(() => {
+        videoContainer.style.opacity = '1';
+        videoContainer.style.transform = 'translateY(0)';
+      }, 50);
+      videoBtn.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
