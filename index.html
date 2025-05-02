@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Portfolio | Front-End Basics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(circle, #f8c4d6 0%, #d5d6f6 100%),
+        url("WhatsApp Image PM.jpeg") no-repeat top right;
+      background-size: cover, 200px auto;
+      background-blend-mode: lighten;
+      animation: softFlow 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes softFlow {
+      0% { filter: brightness(1); }
+      100% { filter: brightness(1.05); }
+    }
+
+    @keyframes moveText {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 40px;
+      color: #d16ba5;
+      margin-bottom: 15px;
+      animation: moveText 2s ease forwards;
+    }
+
+    p {
+      max-width: 100%;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      animation: moveText 3s ease forwards;
+      animation-delay: 1s;
+      opacity: 0;
+    }
+
+    .btn {
+      padding: 10px 25px;
+      background-color: #ffb3c6;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+      margin: 15px;
+    }
+
+    .btn:hover {
+      background-color: #ff99b3;
+      transform: scale(1.05);
+    }
+
+    .btn-next {
+      background: linear-gradient(135deg, #ff8fb1, #a459d1);
+      border: none;
+      border-radius: 25px;
+      color: #fff;
+      padding: 10px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all 0.6s ease-in-out;
+      margin: 15px;
+      opacity: 0;
+      transform: translateY(20px);
+      display: none;
+    }
+
+    .btn-next:hover {
+      background: linear-gradient(135deg, #f15e9e, #843bb7);
+      transform: scale(1.05);
+    }
+
+    .quote, #welcomeText, #videoContainer {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .quote, #welcomeText {
+      max-width: 1000px;
+      font-size: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 0 12px rgba(248, 187, 208, 0.5);
+      line-height: 2;
+      color: #444;
+      animation: moveText 1s ease forwards;
+      margin: 20px 0;
+    }
+
+    .ayah {
+      font-weight: bold;
+      color: #aa4c8f;
+      margin-top: 15px;
+    }
+
+    .decor {
+      font-size: 30px;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #ff8fb1, #a459d1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .star1, .star2, .star3, .star5, .star6 {
+      position: absolute;
+      font-size: 24px;
+      color: #f3a6c9;
+    }
+
+    .star1 { top: 30px; left: 30px; }
+    .star2 { bottom: 40px; right: 50px; }
+    .star3 { top: 50%; left: 40px; transform: translateY(-50%); }
+    .star5 { bottom: 120px; left: 100px; }
+    .star6 { top: 150px; right: 20%; }
+
+    video {
+      width: 100%;
+      max-width: 500px;
+      margin: 30px auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    #introSection {
+      display: block;
+    }
+
+    #welcomeSection {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="introSection">
+    <div class="decor">★</div>
+    <div class="star1">★</div>
+    <div class="star2">★</div>
+    <div class="star5">★</div>
+    <div class="star6">★</div>
+
+    <h1>" ! . Welcome to my elegant world..where code turns into magic"</h1>
+    <button class="btn" onclick="showWelcome()">Discover More</button>
+  </div>
+
+  <div id="welcomeSection">
+    <div id="welcomeText">
+      <p>
+        مرحباً بك في عالم مفعم بالجمال والألوان والإبداع — حيث تتلألأ أسطر الكود كأنها غبار سحري
+      </p>
+    </div>
+    <button class="btn-next" id="showQuoteBtn" onclick="showQuote()">رسالة لقلبك</button>
+  </div>
+
+  <div class="quote" id="quoteBox">
+    <strong style="font-size: 18px; display: block; margin-bottom: 10px;">رسالة لقلبك — الصلاة: صِلة بين العبد وربه…</strong>
+    الصلاة مش بس فريضة، دي راحة وسلام وطمأنينة.<br>
+    جرب تصلي بقلبك، وشوف الفرق!<br><br>
+    الصلاة ليست مجرد أداء واجب، بل هي لقاء روحاني يُجدد فيه القلب عهده مع الله.<br>
+    فيها تسكن النفس، وتُغسل الهموم، وتُضاء الدروب بنور اليقين.<br>
+    فاجعل صلاتك حياة لقلبك.
+    <div class="ayah">
+      يقول الله جل جلاله:<br>
+      {فَخَلَفَ مِن بَعْدِهِمْ خَلْفٌ أَضَاعُوا الصَّلَاةَ وَاتَّبَعُوا الشَّهَوَاتِ ۖ فَسَوْفَ يَلْقَوْنَ غَيًّا}<br><br>
+      ويقول عز وجل:<br>
+      {وَالَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ يُحَافِظُونَ (34) أُولَٰئِكَ فِي جَنَّاتٍ مُّكْرَمُونَ (35)}<br><br>
+      فتأتي الوصايا القرآنية لتريك كيف تستقم فـاختر لنفسك ما شِئْـت...<br>
+      واعمَـل لجنةٍ يطيبُ فيها المقر<br>
+      ولا تغرّنكَ الدُنيـا فتزولَ وتندثـر…<br><br>
+      "صّلِ عَلۓِ حَبِيبُ اللَّه اللهم صّلِ وسَلّمْ عَلۓِ نَبِيْنَا مُحَمد"
+    </div>
+  </div>
+
+  <button class="btn-next" id="videoBtn" onclick="showVideo()">أقبِل على ﷲ ولا تخَف.</button>
+
+  <div id="videoContainer">
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <audio id="bgAudio" src="audio.mp3.mpeg"></audio>
+
+  <script>
+    function showWelcome() {
+      document.getElementById("introSection").style.display = "none";
+      const welcomeSection = document.getElementById("welcomeSection");
+      const welcomeText = document.getElementById("welcomeText");
+      const nextBtn = document.getElementById("showQuoteBtn");
+
+      welcomeSection.style.display = 'block';
+      welcomeText.style.display = 'block';
+      setTimeout(() => {
+        welcomeText.style.opacity = '1';
+        welcomeText.style.transform = 'translateY(0)';
+        nextBtn.style.display = 'inline-block';
+        setTimeout(() => {
+          nextBtn.style.opacity = '1';
+          nextBtn.style.transform = 'translateY(0)';
+        }, 100);
+      }, 100);
+    }
+
+    function showQuote() {
+      const quote = document.getElementById("quoteBox");
+      const audio = document.getElementById("bgAudio");
+      const videoBtn = document.getElementById("videoBtn");
+      quote.style.display = 'block';
+      setTimeout(() => {
+        quote.style.opacity = '1';
+        quote.style.transform = 'translateY(0)';
+        videoBtn.style.display = 'inline-block';
+        setTimeout(() => {
+          videoBtn.style.opacity = '1';
+          videoBtn.style.transform = 'translateY(0)';
+        }, 100);
+      }, 100);
+      audio.play();
+    }
+
+    function showVideo() {
+      const videoContainer = document.getElementById("videoContainer");
+      videoContainer.style.display = 'block';
+      setTimeout(() => {
+        videoContainer.style.opacity = '1';
+        videoContainer.style.transform = 'translateY(0)';
+      }, 100);
+    }
+  </script>
+</body>
+</html>
